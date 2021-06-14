@@ -1,32 +1,42 @@
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 
-let intervalId = 0;
 let bg = new Image();
 bg.src = '../images/bg- wireframe.png';
 
-const cat = new Cat();
-const obstacle = new Obstacle();
 
-function draw() {
+let cat = new Cat()
+let intervalId = 0;
 
+function drawGame() {
     ctx.drawImage( bg, 0, 0, 320, 640)
-    ctx.font = '16px monospace'
-    ctx.fillText(`SCORE: ${cat.score}`, 220, 20)
-    ctx.fillText(`LIVES: ${cat.lives}`, 20, 20)
+    ctx.font = '16px "Press Start 2P"'
+    ctx.fillText(`SCORE: ${cat.score.count}`, 182, 20)
+    ctx.fillText(`LIVES: ${cat.lives.count}`, 8, 20)
+}
+function endAnimation() {
+    cancelAnimationFrame(intervalId)
+}
+
+function animate() {
+    drawGame()
     cat.draw()
+
     
 
     
    
    
-        intervalId = requestAnimationFrame(draw)
-    
+    intervalId = requestAnimationFrame(animate)
+    console.log(intervalId)
+if (intervalId > 500) {
+    endAnimation()
+}
     //----- End of Draw
 }
-console.log(cat)
-// window.addEventListener('load', () => {
-    draw()
+
+window.addEventListener('load', () => {
+    animate()
 
 
     document.addEventListener('keydown', (event) =>{
@@ -38,4 +48,4 @@ console.log(cat)
         }
     })
     
-// })
+})
