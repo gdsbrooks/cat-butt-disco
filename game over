@@ -1,0 +1,7 @@
+<div id="game-over">
+            <h1>MEOW! <br>YOU DIED!</h1>
+            <p>You used up three lives and did not make it to the club. </p>
+            <p>Time to go home, curl up on the sofa and lick those wounds.</p>
+            <p>Or Maybe you want to</p>
+            <a class="btn" id='restart'>Try Again!</a>
+        </div>

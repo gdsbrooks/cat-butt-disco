@@ -11,6 +11,8 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content:center;
+    text-align: center;
+    
 }
 
 #splash {
@@ -32,10 +34,11 @@ h1 {
 
 h2 { 
     font-family: 'Press Start 2P';
-    color: white;
+    color: limegreen;
+    text-shadow: 10px 5px black; 
     font-size: 2em;
     font-weight: lighter;
-    margin-bottom: 0;
+    margin-bottom:;
 }
 
 p {
@@ -47,13 +50,16 @@ p {
     margin-top: 5px;
 }
 
-#kitty {
+#kitty, #album{
     max-width: 45%;
 }
 
-#start {
+#album {
+    margin: 20px;
+}
+
+.btn {
     text-align: center;
-    vertical-align: middle;
     width: 50%;
     border: none;
     color:black;

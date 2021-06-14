@@ -1,0 +1,9 @@
+<div id="win">
+          <h2>MEOW! <br>YOU DID IT!</h2>
+          <p>You successfully collected all the records! </p>
+          <p>This kitty disco is going to be the best one ever!</p>
+          <p>Check out Mr Linden's Track, Cat Butt on Soundcloud:</p>
+          <a href='http://www.soundcloud.com/mrlinden/cat-butt' target="_blank"><img id="album" src="/images/cat-butt-track.jpg" alt = "Cat Butt"/></a>
+<br>
+          <a class="btn" id='restart'>Try Again!</a>
+      </div>
