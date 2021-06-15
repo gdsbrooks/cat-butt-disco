@@ -59,7 +59,6 @@ checkCollision(){
         this.y + this.h > cat.y &&
         this.y < cat.y + cat.h) {
             this.isRecord ? cat.gainPoint() : cat.loseLife();
-            return 'collison!'
         }
 
 
@@ -73,8 +72,7 @@ let object4 = new Object
 let object5 = new Object
 let object6 = new Object
 let object7 = new Object
-let object8 = new Object
-let object9 = new Object
+
 
 
 const objectArr = [object0,object1,object2,object3,object4,object5,object6,object7,]
@@ -82,5 +80,3 @@ const objectArr = [object0,object1,object2,object3,object4,object5,object6,objec
 objectArr.forEach((obj) => obj.randomize())
 
 objectArr.forEach((obj,i) => obj.y -= i * 48)
-
-console.log(objectArr)

@@ -18,10 +18,10 @@ class Cat {
         if (!this.timeout) {
         this.lives --
         this.timeout = true;
-        setTimeout(this.collisionTimeout, 1000)
+        setTimeout(this.collisionTimeout, 3000)
         }
     };
-    
+
     gainPoint() {
         if (!this.timeout) {
             this.score ++

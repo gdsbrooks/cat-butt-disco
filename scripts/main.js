@@ -1,4 +1,9 @@
+
+let splashScreen = document.getElementById('splash')
 let canvas = document.getElementById('myCanvas');
+let gameOverScreen = document.getElementById('game-over')
+let winningScreen = document.getElementById('win')
+
 let ctx = canvas.getContext('2d');
 
 let bg = new Image();
@@ -9,7 +14,7 @@ bg.src = '../images/bg- wireframe.png';
 
 let intervalId = 0;
 
-function drawGame() {
+function drawGameScreen() {
     ctx.drawImage( bg, 0, 0, 320, 640)
     ctx.font = '16px "Press Start 2P"'
     ctx.fillText(`SCORE: ${cat.score}`, 182, 20)
@@ -17,11 +22,26 @@ function drawGame() {
 }
 
 function endAnimation() {
-    cancelAnimationFrame(intervalId)
+    if (cat.score >= 6) {
+    cancelAnimationFrame(intervalId);
+    splashScreen.style.display = 'none'
+    canvas.style.display = 'none'
+    gameOverScreen.style.display='none'
+    winningScreen.style.display ='block'
+    }
+    else if (cat.lives <= 0) {
+    cancelAnimationFrame(intervalId);
+    splashScreen.style.display = 'none'
+    canvas.style.display = 'none'
+    gameOverScreen.style.display='block'
+    winningScreen.style.display ='none'
+    }
 }
 
+
+
 function animate() {
-    drawGame()
+    drawGameScreen()
     cat.draw()
     for (let i=0; i<objectArr.length; i++) {
         objectArr[i].draw()
@@ -31,17 +51,14 @@ function animate() {
 
    
     intervalId = requestAnimationFrame(animate)
-    console.log()
-if (intervalId > 2000) {
     endAnimation()
 }
     //----- End of Draw
-}
+
 
 window.addEventListener('load', () => {
+
     animate()
-
-
     document.addEventListener('keydown', (event) =>{
         if (event.code == 'ArrowRight') {
             cat.move('right')
