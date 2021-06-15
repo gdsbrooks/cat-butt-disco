@@ -38,9 +38,12 @@ class Cat {
             this.x = this.x +60;
         }
     };
-    draw() {
-        ctx.drawImage(catSprite, this.x, this.y, this.w, this.h);
-    };
+    draw() { //if in timeout (after collision) make cat flash, otherwise draw cat.
+        const frequency = 200
+        if (!this.timeout || Math.floor(Date.now() / frequency % 2)) {
+            ctx.drawImage(catSprite, this.x, this.y, this.w, this.h);
+        };
 };
-
+}
 let cat = new Cat();
+

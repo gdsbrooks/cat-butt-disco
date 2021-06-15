@@ -59,6 +59,9 @@ checkCollision(){
         this.y + this.h > cat.y &&
         this.y < cat.y + cat.h) {
             this.isRecord ? cat.gainPoint() : cat.loseLife();
+            this.h = 0
+            this.w = 0
+            this.x --
         }
 
 
@@ -79,5 +82,3 @@ function makeObstacles(){
     objectArr.forEach((obj) => obj.randomize())
     objectArr.forEach((obj,i) => obj.y -= i * 48)
 }
-
-console.log(objectArr)

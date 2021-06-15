@@ -14,7 +14,6 @@ bg.src = '../images/bg- wireframe.png';
 // objectArr - an array of new Objects (obstacles or records) is created in objects.js
 
 
-
 function drawGameScreen() {
     ctx.drawImage( bg, 0, 0, 320, 640)
     ctx.font = '16px "Press Start 2P"'
@@ -44,8 +43,6 @@ function start() {
     splashScreen.style.display = 'none'
     gameOverScreen.style.display='none'
     winningScreen.style.display ='none'
-    
-    intervalId = 0;
     makeObstacles()
     animate()
 }
@@ -70,13 +67,13 @@ function animate() {
         objectArr[i].move()
         objectArr[i].checkCollision();
         }
-
    
     intervalId = requestAnimationFrame(animate)
     endAnimation()
-}
-    //----- End of Draw
 
+    //----- End of Draw
+    }
+    
 window.addEventListener('load', () => {
     
     splashScreen.style.display = 'flex'
@@ -89,13 +86,10 @@ window.addEventListener('load', () => {
     })
     btnRestart1.addEventListener('click', () => {
         start()
-        console.log('restart')
     })
 
     btnRestart2.addEventListener('click', () => {
         start()
-        console.log('restart')
-
     })
 
     document.addEventListener('keydown', (event) =>{
