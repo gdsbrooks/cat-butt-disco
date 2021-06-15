@@ -64,19 +64,20 @@ checkCollision(){
 
 }
 }
-let object0 = new Object
-let object1 = new Object
-let object2 = new Object
-let object3 = new Object
-let object4 = new Object
-let object5 = new Object
-let object6 = new Object
-let object7 = new Object
+const objectArr = []
 
+function makeObstacles(){
+    let object0 = new Object 
+    let object1 = new Object
+    let object2 = new Object
+    let object3 = new Object
+    let object4 = new Object
+    let object5 = new Object
+    let object6 = new Object
+    let object7 = new Object
+    objectArr.push (object0,object1,object2,object3,object4,object5,object6,object7)
+    objectArr.forEach((obj) => obj.randomize())
+    objectArr.forEach((obj,i) => obj.y -= i * 48)
+}
 
-
-const objectArr = [object0,object1,object2,object3,object4,object5,object6,object7,]
-
-objectArr.forEach((obj) => obj.randomize())
-
-objectArr.forEach((obj,i) => obj.y -= i * 48)
+console.log(objectArr)
