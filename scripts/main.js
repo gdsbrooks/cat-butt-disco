@@ -4,16 +4,18 @@ let ctx = canvas.getContext('2d');
 let bg = new Image();
 bg.src = '../images/bg- wireframe.png';
 
+// cat - a new Cat object called cat is created in cat.js
+// objectArr - an array of new Objects (obstacles or records) is created in objects.js
 
-let cat = new Cat()
 let intervalId = 0;
 
 function drawGame() {
     ctx.drawImage( bg, 0, 0, 320, 640)
     ctx.font = '16px "Press Start 2P"'
-    ctx.fillText(`SCORE: ${cat.score.count}`, 182, 20)
-    ctx.fillText(`LIVES: ${cat.lives.count}`, 8, 20)
+    ctx.fillText(`SCORE: ${cat.score}`, 182, 20)
+    ctx.fillText(`LIVES: ${cat.lives}`, 8, 20)
 }
+
 function endAnimation() {
     cancelAnimationFrame(intervalId)
 }
@@ -21,15 +23,16 @@ function endAnimation() {
 function animate() {
     drawGame()
     cat.draw()
+    for (let i=0; i<objectArr.length; i++) {
+        objectArr[i].draw()
+        objectArr[i].move()
+        objectArr[i].checkCollision();
+        }
 
-    
-
-    
-   
    
     intervalId = requestAnimationFrame(animate)
-    console.log(intervalId)
-if (intervalId > 500) {
+    console.log()
+if (intervalId > 2000) {
     endAnimation()
 }
     //----- End of Draw

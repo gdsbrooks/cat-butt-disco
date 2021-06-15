@@ -3,31 +3,33 @@ catSprite.src = '../images/catbutt-icons.svg'
 
 class Cat {
     constructor(){
-        this.lives = { count:3, interval: []}
-        this.score = { count:0, interval: []};
+        this.lives = 3;
+        this.score = 0;
         this.x = 136;
         this.y = 572;
         this.w = 48;
         this.h = 48;
+        this.timeout = false;
     };
+
+    collisionTimeout = () => this.timeout = false;
+
     loseLife() {
-        if (!this.lives.interval.length) {
-            this.lives.count--
-            this.lives.interval.unshift(intervalId)
-        } else if (intervalId > this.lives.interval[0] + 180) {
-            this.lives.count--
-            this.lives.interval.unshift(intervalId)
+        if (!this.timeout) {
+        this.lives --
+        this.timeout = true;
+        setTimeout(this.collisionTimeout, 1000)
         }
     };
+    
     gainPoint() {
-        if (!this.score.interval.length) {
-            this.score.count++
-            this.score.interval.unshift(intervalId)
-        } else if (intervalId > this.score.interval[0] + 180) {
-            this.score.count++
-            this.score.interval.unshift(intervalId)
-        }
+        if (!this.timeout) {
+            this.score ++
+            this.timeout = true;
+            setTimeout(this.collisionTimeout, 2000)
+            }    
     };
+
     move(direction) {
         if (direction === 'left' && this.x >= 76) {
             this.x = this.x - 60;
@@ -40,3 +42,5 @@ class Cat {
         ctx.drawImage(catSprite, this.x, this.y, this.w, this.h);
     };
 };
+
+let cat = new Cat();
