@@ -1,9 +1,10 @@
+//images
 let recordSprite = new Image()
 recordSprite.src = '../images/vinyl.png'
 let barrierSprite = new Image()
 barrierSprite.src ='../images/obstacle.png'
-
-
+//global variables
+let recordCounter = 0;
 
 
 class Obstacle {
@@ -26,7 +27,7 @@ class Obstacle {
     }
 move(){
         this.y ++
-        this.y > canvas.height? this.randomize() : null;
+        this.y > canvas.height ? this.randomize() : null;
         if ( this.y > 144 && this.y < 504) {
             this.x += this.xShift
             this.h += 40/360
@@ -39,19 +40,20 @@ randomize() {
         { x: 146, y: 144, w: 8, h: 8, xShift: (-70/360), isRecord: false},
         { x: 156, y: 144, w: 8, h: 8, xShift: (-20/360), isRecord: false},
         { x: 166, y: 144, w: 8, h: 8, xShift: (30/360), isRecord: false},
-        { x: 176, y: 144, w: 8, h: 8, xShift: (80/360), isRecord: false}
+        { x: 176, y: 144, w: 8, h: 8, xShift: (80/360), isRecord: false},
+        { x: -100, y: 144, w: 8, h: 8, xShift: 0, isRecord: false},
        ];
 
-       let r = Math.floor(Math.random() * 5)
+       let r = Math.floor(Math.random() * startPositions.length)
        this.x = startPositions[r].x
        this.y = startPositions[r].y
        this.w = startPositions[r].w
        this.h = startPositions[r].h
        this.xShift = startPositions[r].xShift
 
-       let recordRandom = !(Math.floor(Math.random() * 8))
+       recordCounter ++
 
-       this.isRecord = recordRandom
+       recordCounter % 24 === 0 ? this.isRecord = true : null
 }
 checkCollision(){  
     if (this.x < cat.x + cat.w &&
@@ -69,7 +71,6 @@ checkCollision(){
 const obstacles = []
 
 function makeObstacles(){
-    let obstacle0 = new Obstacle 
     let obstacle1 = new Obstacle
     let obstacle2 = new Obstacle
     let obstacle3 = new Obstacle
@@ -77,9 +78,17 @@ function makeObstacles(){
     let obstacle5 = new Obstacle
     let obstacle6 = new Obstacle
     let obstacle7 = new Obstacle
-    obstacles.push (obstacle0,obstacle1,obstacle2,obstacle3,obstacle4,obstacle5,obstacle6,obstacle7)
-    obstacles.forEach((obj) => obj.randomize())
-}
-//     obstacles.forEach((obj,i) => {
-//         if obj.y -= i * 48)
-// }
+    let obstacle8 = new Obstacle
+    let obstacle9 = new Obstacle
+    let obstacle10 = new Obstacle
+    let obstacle11 = new Obstacle
+    let obstacle12 = new Obstacle 
+
+
+    obstacles.push (obstacle1,obstacle2,obstacle3,obstacle4,obstacle5,obstacle6,obstacle7,obstacle8,obstacle9,obstacle10,obstacle11,obstacle12)
+    obstacles.forEach((obj) => obj.randomize()) //randomly set horizontal start position
+    obstacles.forEach((obj,i) => (              //gather into staggered rows.
+        i > 9 ? obj.y = -288 : 
+        i > 6 ? obj.y = -144 : 
+        i > 3 ? obj.y = 0 : obj.y = 144))
+    }

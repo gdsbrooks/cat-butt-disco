@@ -32,18 +32,20 @@ class Cat {
 
     move(direction) {
         if (direction === 'left' && this.x >= 76) {
-            this.x = this.x - 60;
+            setTimeout(() => this.x = this.x - 60,);
         }
         if (direction === 'right' && this. x <= 196){
             this.x = this.x +60;
         }
     };
     draw() { //if in timeout (after collision) make cat flash, otherwise draw cat.
-        const frequency = 250
-        let step = true;
-        (Math.floor(Date.now() / frequency % 2)) ?
-            ctx.drawImage(catSpriteSheet, 240,0,240,240, this.x, this.y, this.w, this.h) :
-            !this.timeout ? ctx.drawImage(catSpriteSheet, 480,0,240,240, this.x, this.y, this.w, this.h) : null;
+        const frequency = (300)
+        
+        if (Math.floor(Date.now() / frequency % 2)) {
+            ctx.drawImage(catSpriteSheet, 240,0,240,240, this.x, this.y, this.w, this.h)
+        } else if (!this.timeout) {
+            ctx.drawImage(catSpriteSheet, 480,0,240,240, this.x, this.y, this.w, this.h)
+         } null;
         };
 };
 

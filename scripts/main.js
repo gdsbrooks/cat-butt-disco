@@ -95,9 +95,11 @@ window.addEventListener('load', () => {
     document.addEventListener('keydown', (event) =>{
         if (event.code == 'ArrowRight') {
             cat.move('right')
+            cat.draw('right')
         }
         if (event.code == 'ArrowLeft') {
            cat.move('left')
+           cat.draw('left')
         }
     })
     
