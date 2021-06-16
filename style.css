@@ -1,41 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Press+Start+2P&display=swap');
-html, body {
+html {
     margin: 0;
     padding: 0;
-    background-color: midnightblue;
+    background-color: coral;
     font-family: 'Press Start 2P', cursive;
 }
-#outer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-}
-#splash {}
 
-#game {
-display: none;
-    
-}
-
-#game-over {
-    display: none;
-}
-
-#win {
-    display: none;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: blueviolet;
 }
 
 .flexed {
     display:flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
+    background-color: midnightblue;
     width: 320px;
     height: 640px;
     margin: 0px;
+} 
+
+#splash, #game, #win, #game-over {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -64,7 +56,7 @@ p {
     font-size: 16px;
     padding: 0px 0px;
     margin: 0px;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 #kitty, #album{
@@ -74,6 +66,8 @@ p {
 
 #album {
     margin: 20px;
+    margin-bottom: 0px;
+    align-content: center;;
 }
 
 .btn {
@@ -90,7 +84,6 @@ p {
 
 #btnRestart1, #btnRestart2 {
     position: relative;
-    top: 20px;
 }
 footer {
     margin: 5px;

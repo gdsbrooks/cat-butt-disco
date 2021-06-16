@@ -63,7 +63,7 @@ checkCollision(){
             this.isRecord ? cat.gainPoint() : cat.loseLife();
             this.h = 0
             this.w = 0
-            this.x --
+            this.x = -100
         }
 
 }

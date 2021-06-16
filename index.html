@@ -8,9 +8,8 @@
     <title>Cat Butt Disco</title>
   </head>
   <body>
-    <div id="outer">
     <!-- Splash Screen: -->
-
+    <div class="flexed">
     <div id="splash" class ="flexed">
           <h1>CAT BUTT</h1>
           <img id="kitty" src="./images/splash-kitty.png" alt="8-bit cat" />
@@ -36,15 +35,14 @@
 
     <!-- Game Screen: -->
 
-    <div id="game" class ="flexed">
         <canvas width="320" height="640" id="myCanvas"></canvas>
-    </div>
+    
 
     <!-- Win Screen: -->
 
-    <div id="win" class ="flexed">
-        <h2>MEOW!</h2>
-        <h2>YOU DID IT!</h2>
+    <div id="win">
+        <h1>MEOW!</h1>
+        <h1>YOU DID IT!</h1>
         <p>You successfully collected all the records!</p>
         <p>This kitty disco is going to be the best one ever!</p>
         <p>Check out Mr Linden's Track, Cat Butt on Soundcloud:</p>
@@ -56,17 +54,15 @@
 
     <!-- Game Over Screen: -->
 
-    <div id="game-over" class ="flexed">
+    <div id="game-over">
         <h1>MEOW! <br />YOU DIED!</h1>
         <p>You used up three lives and did not make it to the club.</p>
         <p>Time to go home, curl up on the sofa and lick those wounds.</p>
-        <p>Or Maybe you want to</p>
         <a class="btn" id="btnRestart2">Try Again!</a>
     </div>
-
+  </div>
     <script src="./scripts/cat.js"></script>
     <script src="./scripts/objects.js"></script>
     <script src="./scripts/main.js"></script>
-  </div>
   </body>
 </html>

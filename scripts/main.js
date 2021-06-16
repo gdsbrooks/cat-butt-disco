@@ -24,7 +24,6 @@ function drawGameScreen() {
 function gameOver() {
     cancelAnimationFrame(intervalId);
     gameOverScreen.style.display='flex'
-
     splashScreen.style.display = 'none'
     canvas.style.display = 'none'
     winningScreen.style.display ='none'
@@ -48,7 +47,7 @@ function start() {
 }
 console.log(obstacles)
 function endAnimation() {
-    if (cat.score >= 6) {
+    if (cat.score >= 1) {
         win()
     }
     else if (cat.lives <= 0) {
@@ -64,7 +63,7 @@ function animate() {
     cat.draw()
     for (let i=0; i<obstacles.length; i++) {
         obstacles[i].draw()
-        // obstacles[i].move()
+        obstacles[i].move()
         obstacles[i].checkCollision();
         }
 
