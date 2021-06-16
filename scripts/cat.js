@@ -1,5 +1,5 @@
-let catSprite = new Image()
-catSprite.src = '../images/catbutt-icons.svg'
+let catSpriteSheet = new Image()
+catSpriteSheet.src = '../images/cat-sprite-sheet.png'
 
 class Cat {
     constructor(){
@@ -39,11 +39,13 @@ class Cat {
         }
     };
     draw() { //if in timeout (after collision) make cat flash, otherwise draw cat.
-        const frequency = 200
-        if (!this.timeout || Math.floor(Date.now() / frequency % 2)) {
-            ctx.drawImage(catSprite, this.x, this.y, this.w, this.h);
+        const frequency = 250
+        let step = true;
+        (Math.floor(Date.now() / frequency % 2)) ?
+            ctx.drawImage(catSpriteSheet, 240,0,240,240, this.x, this.y, this.w, this.h) :
+            !this.timeout ? ctx.drawImage(catSpriteSheet, 480,0,240,240, this.x, this.y, this.w, this.h) : null;
         };
 };
-}
+
 let cat = new Cat();
 

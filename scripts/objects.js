@@ -6,7 +6,7 @@ barrierSprite.src ='../images/obstacle.png'
 
 
 
-class Object {
+class Obstacle {
     constructor(x,y,h,w,xShift,isRecord){
         this.x = x;
         this.y = y;
@@ -64,21 +64,22 @@ checkCollision(){
             this.x --
         }
 
-
 }
 }
-const objectArr = []
+const obstacles = []
 
 function makeObstacles(){
-    let object0 = new Object 
-    let object1 = new Object
-    let object2 = new Object
-    let object3 = new Object
-    let object4 = new Object
-    let object5 = new Object
-    let object6 = new Object
-    let object7 = new Object
-    objectArr.push (object0,object1,object2,object3,object4,object5,object6,object7)
-    objectArr.forEach((obj) => obj.randomize())
-    objectArr.forEach((obj,i) => obj.y -= i * 48)
+    let obstacle0 = new Obstacle 
+    let obstacle1 = new Obstacle
+    let obstacle2 = new Obstacle
+    let obstacle3 = new Obstacle
+    let obstacle4 = new Obstacle
+    let obstacle5 = new Obstacle
+    let obstacle6 = new Obstacle
+    let obstacle7 = new Obstacle
+    obstacles.push (obstacle0,obstacle1,obstacle2,obstacle3,obstacle4,obstacle5,obstacle6,obstacle7)
+    obstacles.forEach((obj) => obj.randomize())
 }
+//     obstacles.forEach((obj,i) => {
+//         if obj.y -= i * 48)
+// }
