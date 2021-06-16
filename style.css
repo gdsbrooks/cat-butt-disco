@@ -5,31 +5,47 @@ html, body {
     background-color: midnightblue;
     font-family: 'Press Start 2P', cursive;
 }
-
-#the-div {
-    display:flex;
+#outer {
+    display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    justify-content:space-between;
-    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+#splash {}
+
+#game {
+display: none;
     
 }
 
-#splash {
-    display: flex;
+#game-over {
+    display: none;
+}
+
+#win {
+    display: none;
+}
+
+.flexed {
+    display:flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items:center;
-    max-width: 640px;
+    justify-content:space-around;
+    align-items: center;
+    width: 320px;
+    height: 640px;
+    margin: 0px;
 }
 
 h1 {
     font-family: 'Press Start 2P', cursive;
-    font-size: 4em;
+    font-size: 40px;
     text-align: center;
     color: limegreen;
     text-shadow: 10px 5px black; 
-    margin: 5px
+    margin: 10px 0px;
+    padding: 0;
 }
 
 h2 { 
@@ -46,12 +62,14 @@ p {
     font-weight: lighter;
     text-align: center;
     font-size: 16px;
-    padding: 0px 3px;
+    padding: 0px 0px;
+    margin: 0px;
     margin-top: 5px;
 }
 
 #kitty, #album{
-    max-width: 45%;
+    max-width: 50%;
+
 }
 
 #album {
@@ -78,11 +96,12 @@ footer {
     margin: 5px;
     color: white;
     font-family: 'Lobster';
+    text-align: center;    
     justify-self: flex-end;
 }
 
 footer a{
-   
+    font-size: 1.2em;
     text-decoration: none;
     color: limegreen;
     text-align: center;

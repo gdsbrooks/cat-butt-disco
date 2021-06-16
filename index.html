@@ -8,54 +8,65 @@
     <title>Cat Butt Disco</title>
   </head>
   <body>
-    <div id="the-div">
+    <div id="outer">
+    <!-- Splash Screen: -->
 
-      <!-- Splash Screen: -->
+    <div id="splash" class ="flexed">
+          <h1>CAT BUTT</h1>
+          <img id="kitty" src="./images/splash-kitty.png" alt="8-bit cat" />
+          <h1>DISCO</h1>
+           <p>
+            <strong>OH NO!</strong> Your human is DJ'ing tonight but he's lost
+            all his tracks on the way to the clurb!
+          </p>
+          <p>
+            Help him out by finding the records, avoiding the obstacles and
+            saving the day!
+          </p>
+          <a class="btn" id="btnStart">Start!</a>
+          <footer>
+            Inspired by the music and creative genius of
+            <br>
+            <a href="https://soundcloud.com/mrlinden/cat-butt" target="_blank"
+              >Mr Linden.</a
+            >
+          </footer>
       
-      <div id="splash">
-        <h1>CAT BUTT</h1>
-        <img id="kitty" src="/images/catbutt-icons.svg" alt="8-bit cat" />
-        <h1>DISCO</h1>
-        <p><strong>OH NO!</strong> Your human is DJ'ing tonight but he's lost all his tracks on the way to the clurb!</p> 
-        <p>Help him out by finding the records, avoiding the obstacles and saving the day!</p>
-        <a class='btn' id='btnStart'>Start!</a>
-        <footer>
-            Inspired by the music and creative genius of <a href="https://soundcloud.com/mrlinden/cat-butt" target="_blank">Mr Linden.</a>  
-      </footer>
     </div>
 
-<!-- Game Screen: -->
-    
-  <div id="game">
-      <canvas width="320" height="640" id="myCanvas"></canvas>
-  </div>
+    <!-- Game Screen: -->
 
-  <!-- Win Screen: -->
-      
-  <div id="win">
-    <h2>MEOW! <br>YOU DID IT!</h2>
-    <p>You successfully collected all the records! </p>
-    <p>This kitty disco is going to be the best one ever!</p>
-    <p>Check out Mr Linden's Track, Cat Butt on Soundcloud:</p>
-    <a href='http://www.soundcloud.com/mrlinden/cat-butt' target="_blank"><img id="album" src="/images/cat-butt-track.jpg" alt = "Cat Butt"/></a>
-
-    <a class="btn" id='btnRestart1'>Try Again!</a>
-</div>
-
-  <!-- Game Over Screen: -->
-
-  <div id="game-over">
-    <h1>MEOW! <br>YOU DIED!</h1>
-    <p>You used up three lives and did not make it to the club. </p>
-    <p>Time to go home, curl up on the sofa and lick those wounds.</p>
-    <p>Or Maybe you want to</p>
-    <a class="btn" id='btnRestart2'>Try Again!</a>
-  </div>
-
+    <div id="game" class ="flexed">
+        <canvas width="320" height="640" id="myCanvas"></canvas>
     </div>
-g    <script src="./scripts/cat.js"></script>
+
+    <!-- Win Screen: -->
+
+    <div id="win" class ="flexed">
+        <h2>MEOW!</h2>
+        <h2>YOU DID IT!</h2>
+        <p>You successfully collected all the records!</p>
+        <p>This kitty disco is going to be the best one ever!</p>
+        <p>Check out Mr Linden's Track, Cat Butt on Soundcloud:</p>
+        <a href="http://www.soundcloud.com/mrlinden/cat-butt" target="_blank"
+          ><img id="album" src="/images/cat-butt-track.jpg" alt="Cat Butt"
+        /></a>
+        <a class="btn" id="btnRestart1">Try Again!</a>
+    </div>
+
+    <!-- Game Over Screen: -->
+
+    <div id="game-over" class ="flexed">
+        <h1>MEOW! <br />YOU DIED!</h1>
+        <p>You used up three lives and did not make it to the club.</p>
+        <p>Time to go home, curl up on the sofa and lick those wounds.</p>
+        <p>Or Maybe you want to</p>
+        <a class="btn" id="btnRestart2">Try Again!</a>
+    </div>
+
+    <script src="./scripts/cat.js"></script>
     <script src="./scripts/objects.js"></script>
     <script src="./scripts/main.js"></script>
-
+  </div>
   </body>
 </html>

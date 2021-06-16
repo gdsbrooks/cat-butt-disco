@@ -23,7 +23,7 @@ function drawGameScreen() {
 
 function gameOver() {
     cancelAnimationFrame(intervalId);
-    gameOverScreen.style.display='block'
+    gameOverScreen.style.display='flex'
 
     splashScreen.style.display = 'none'
     canvas.style.display = 'none'
@@ -64,7 +64,7 @@ function animate() {
     cat.draw()
     for (let i=0; i<obstacles.length; i++) {
         obstacles[i].draw()
-        obstacles[i].move()
+        // obstacles[i].move()
         obstacles[i].checkCollision();
         }
 
@@ -76,10 +76,10 @@ function animate() {
     
 window.addEventListener('load', () => {
     
-    // splashScreen.style.display = 'flex'
-    // canvas.style.display = 'none'
-    // gameOverScreen.style.display='none'
-    // winningScreen.style.display ='none'
+    splashScreen.style.display = 'flex'
+    canvas.style.display = 'none'
+    gameOverScreen.style.display='none'
+    winningScreen.style.display ='none'
     
     btnStart.addEventListener('click', () => {
         start()

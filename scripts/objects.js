@@ -53,7 +53,7 @@ randomize() {
 
        recordCounter ++
 
-       recordCounter % 24 === 0 ? this.isRecord = true : null
+       recordCounter % 18 === 0 ? this.isRecord = true : null
 }
 checkCollision(){  
     if (this.x < cat.x + cat.w &&
