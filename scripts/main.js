@@ -23,26 +23,26 @@ function drawGameScreen() {
 
 function gameOver() {
     cancelAnimationFrame(intervalId);
-    // gameOverScreen.style.display='block'
+    gameOverScreen.style.display='block'
 
-    // splashScreen.style.display = 'none'
-    // canvas.style.display = 'none'
-    // winningScreen.style.display ='none'
+    splashScreen.style.display = 'none'
+    canvas.style.display = 'none'
+    winningScreen.style.display ='none'
 }
 
 function win() {
     cancelAnimationFrame(intervalId);
-    // winningScreen.style.display ='block'
+    winningScreen.style.display ='block'
 
-    // canvas.style.display = 'none'
-    // splashScreen.style.display = 'none'
-    // gameOverScreen.style.display='none'
+    canvas.style.display = 'none'
+    splashScreen.style.display = 'none'
+    gameOverScreen.style.display='none'
 }
 function start() {
-    // canvas.style.display = 'block'
-    // splashScreen.style.display = 'none'
-    // gameOverScreen.style.display='none'
-    // winningScreen.style.display ='none'
+    canvas.style.display = 'block'
+    splashScreen.style.display = 'none'
+    gameOverScreen.style.display='none'
+    winningScreen.style.display ='none'
     makeObstacles()
     animate()
 }
