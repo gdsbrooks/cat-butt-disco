@@ -14,7 +14,7 @@ let ctx = canvas.getContext('2d');
 let intervalId = 0;
 
 let bg = new Image();
-bg.src = './images/bg-wireframe.png';
+bg.src = './images/bg-night.png';
 
 // cat - a new Cat object called cat is created in cat.js
 // obstacles - an array of new Objects (obstacles or records) is created in objects.js
