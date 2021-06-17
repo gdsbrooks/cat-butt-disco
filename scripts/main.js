@@ -29,25 +29,42 @@ function drawGameScreen() {
 function gameOver() {
     cancelAnimationFrame(intervalId);
     
+    //Show Game Over Screen
     gameOverScreen.style.display='flex'
     splashScreen.style.display = 'none'
     gameScreen.style.display = 'none'
     winningScreen.style.display ='none'
+    
+    //AUDIO
+    gameplayAudio.pause()
+    gameOverAudio.play()
+    
 }
 
 function win() {
     cancelAnimationFrame(intervalId);
     
+    //Show Win Screen
     winningScreen.style.display ='flex'
     gameScreen.style.display = 'none'
     splashScreen.style.display = 'none'
     gameOverScreen.style.display='none'
+
+    //AUDIO
+    gameplayAudio.pause()
+    winAudio.play()
 }
 function start() {
     gameScreen.style.display = 'flex'
     splashScreen.style.display = 'none'
     gameOverScreen.style.display='none'
     winningScreen.style.display ='none'
+
+    //AUDIO 
+    splashAudio.pause()
+    winAudio.pause()
+    gameOverAudio.pause()
+    gameplayAudio.play()
     
     makeObstacles()
     animate()
@@ -78,10 +95,8 @@ function animate() {
         obstacles[i].move()
         obstacles[i].checkCollision();
     }
-
-    intervalId = requestAnimationFrame(animate)
     endAnimation()
-
+    intervalId = requestAnimationFrame(animate)
     }
     
 window.addEventListener('load', () => {
@@ -90,6 +105,8 @@ window.addEventListener('load', () => {
     gameScreen.style.display = 'none'
     gameOverScreen.style.display='none'
     winningScreen.style.display ='none'
+    //AUDIO 
+    splashAudio.play()
     
 
     // event handlers

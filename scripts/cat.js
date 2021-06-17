@@ -16,23 +16,25 @@ class Cat {
 
     loseLife() {
         if (!this.timeout) {
-        this.lives --
+        this.lives--
         this.timeout = true;
         setTimeout(this.collisionTimeout, 3000)
+        this.lives > 0 ? loselifeAudio.play() : null;
         }
     };
 
     gainPoint() {
         if (!this.timeout) {
-            this.score ++
+            this.score++
             this.timeout = true;
             setTimeout(this.collisionTimeout, 2000)
+            this.score < 6 ? scoreUpAudio.play() : null;
             }    
     };
 
     move(direction) {
         if (direction === 'left' && this.x >= 76) {
-            setTimeout(() => this.x = this.x - 60,);
+            this.x = this.x - 60;
         }
         if (direction === 'right' && this. x <= 196){
             this.x = this.x +60;
