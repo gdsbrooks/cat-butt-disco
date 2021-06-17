@@ -20,7 +20,9 @@ bg.src = './images/bg-night.png';
 // obstacles - an array of new Objects (obstacles or records) is created in objects.js
 
 function drawGameScreen() {
+    //Draw game background and lives / score counters
     ctx.drawImage( bg, 0, 0, 320, 640)
+    ctx.fillStyle = '#32CD32'
     ctx.font = '16px "Press Start 2P"'
     ctx.fillText(`SCORE: ${cat.score}`, 182, 20)
     ctx.fillText(`LIVES: ${cat.lives}`, 8, 20)
@@ -36,6 +38,8 @@ function gameOver() {
     winningScreen.style.display ='none'
     //AUDIO
     gameplayAudio.pause()
+    winAudio.pause()
+    splashAudio.pause()
     gameOverAudio.play()
     
 }
@@ -50,6 +54,8 @@ function win() {
     gameOverScreen.style.display='none'
     //AUDIO
     gameplayAudio.pause()
+    gameOverAudio.pause()
+    splashAudio.pause()
     winAudio.play()
 }
 function start() {
@@ -63,15 +69,20 @@ function start() {
     winAudio.pause()
     gameOverAudio.pause()
     gameplayAudio.play()
-    console.log(obstacles)
+    
+    //Make obstacles and their array, and start animation loop
     makeObstacles()
     animate()
 }
 
 function restart(){
+    //Reset cat: 3 lives 0 points, in middle position.
     cat = new Cat();
+    //Clear obstacle array to make a new set of obstacles.
     obstacles = []
+    //Reset frame counter
     intervalId = 0;
+    //Reset record counter that sets record appearance frequency
     recordCounter = 0
     start()
 }
@@ -80,7 +91,7 @@ function restart(){
 
 // The animation loop:
 function animate() {
-    drawGameScreen()
+    drawGameScreen() 
     cat.draw()
     for (let i=0; i<obstacles.length; i++) {
         obstacles[i].draw()
@@ -99,6 +110,7 @@ window.addEventListener('load', () => {
     gameOverScreen.style.display='none'
     winningScreen.style.display ='none'
     //AUDIO 
+
     splashAudio.play()
     
 
