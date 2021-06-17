@@ -2,32 +2,37 @@
 html {
     margin: 0;
     padding: 0;
-    background-color: coral;
+    background-color: midnightblue;
     font-family: 'Press Start 2P', cursive;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: blueviolet;
+    background-color: midnightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
 }
 
-.flexed {
+#outer {
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    background-color: midnightblue;
-    width: 320px;
+    align-content:center;
     height: 640px;
+    width: 320px;
     margin: 0px;
+    padding: 0px;
 } 
 
 #splash, #game, #win, #game-over {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
+    
 }
 
 h1 {
@@ -59,20 +64,40 @@ p {
     margin-top: 20px;
 }
 
-#kitty, #album{
+#kitty {
     max-width: 50%;
 
 }
-
 #album {
     margin: 20px;
-    margin-bottom: 0px;
-    align-content: center;;
+    max-width: 50%;
+} 
+
+#albumlink {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
 }
+#crying-cat {
+    width: 70%;
+    max-width: 300px;
+    margin: 20px 0px;
+    margin-top: -30px;
+    padding: 0px;
+    border: none;
+    background-color: none;
+
+
+}
+
+
 
 .btn {
     text-align: center;
     width: 50%;
+    max-width: 300px;
     border: none;
     color:black;
     font-family: 'Press Start 2P';
@@ -82,9 +107,6 @@ p {
     margin: 20px;
 }
 
-#btnRestart1, #btnRestart2 {
-    position: relative;
-}
 footer {
     margin: 5px;
     color: white;

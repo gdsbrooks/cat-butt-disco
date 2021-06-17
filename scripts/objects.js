@@ -1,6 +1,6 @@
 //images
 let recordSprite = new Image()
-recordSprite.src = '../images/vinyl.png'
+recordSprite.src = './../images/vinyl.png'
 let barrierSprite = new Image()
 barrierSprite.src ='../images/obstacle.png'
 //global variables

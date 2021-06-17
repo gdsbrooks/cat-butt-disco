@@ -1,10 +1,16 @@
 
+///DOM  nodes
 let splashScreen = document.getElementById('splash')
-let canvas = document.getElementById('myCanvas');
+let gameScreen = document.getElementById('game')
 let gameOverScreen = document.getElementById('game-over')
 let winningScreen = document.getElementById('win')
-let ctx = canvas.getContext('2d');
+let btnStart = document.getElementById('btnStart')
+let btnRestart1 = document.getElementById('btnRestart1')
+let btnRestart2 = document.getElementById('btnRestart2')
 
+// create canvas
+let canvas = document.getElementById('myCanvas')
+let ctx = canvas.getContext('2d');
 let intervalId = 0;
 
 let bg = new Image();
@@ -12,7 +18,6 @@ bg.src = '../images/bg- wireframe.png';
 
 // cat - a new Cat object called cat is created in cat.js
 // obstacles - an array of new Objects (obstacles or records) is created in objects.js
-
 
 function drawGameScreen() {
     ctx.drawImage( bg, 0, 0, 320, 640)
@@ -23,29 +28,30 @@ function drawGameScreen() {
 
 function gameOver() {
     cancelAnimationFrame(intervalId);
+    
     gameOverScreen.style.display='flex'
     splashScreen.style.display = 'none'
-    canvas.style.display = 'none'
+    gameScreen.style.display = 'none'
     winningScreen.style.display ='none'
 }
 
 function win() {
     cancelAnimationFrame(intervalId);
-    winningScreen.style.display ='block'
-
-    canvas.style.display = 'none'
+    
+    winningScreen.style.display ='flex'
+    gameScreen.style.display = 'none'
     splashScreen.style.display = 'none'
     gameOverScreen.style.display='none'
 }
 function start() {
-    canvas.style.display = 'block'
+    gameScreen.style.display = 'flex'
     splashScreen.style.display = 'none'
     gameOverScreen.style.display='none'
     winningScreen.style.display ='none'
+    
     makeObstacles()
     animate()
 }
-console.log(obstacles)
 function endAnimation() {
     if (cat.score >= 1) {
         win()
@@ -53,11 +59,8 @@ function endAnimation() {
     else if (cat.lives <= 0) {
         gameOver()
     }
-
 }
-
-
-
+// The animation loop:
 function animate() {
     drawGameScreen()
     cat.draw()
@@ -65,21 +68,22 @@ function animate() {
         obstacles[i].draw()
         obstacles[i].move()
         obstacles[i].checkCollision();
-        }
+    }
 
-        intervalId = requestAnimationFrame(animate)
+    intervalId = requestAnimationFrame(animate)
     endAnimation()
 
-    //----- End of Draw
     }
     
 window.addEventListener('load', () => {
-    
+    //show initial splash screen:
     splashScreen.style.display = 'flex'
-    canvas.style.display = 'none'
+    gameScreen.style.display = 'none'
     gameOverScreen.style.display='none'
     winningScreen.style.display ='none'
     
+
+    // event handlers
     btnStart.addEventListener('click', () => {
         start()
     })

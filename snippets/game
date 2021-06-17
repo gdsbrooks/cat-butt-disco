@@ -1,3 +1,0 @@
-  <div id="game">
-            <canvas width="320" height="640" id="myCanvas"></canvas>
-        </div>
