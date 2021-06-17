@@ -2,14 +2,14 @@
 html {
     margin: 0;
     padding: 0;
-    background-color: midnightblue;
+    background: url(./images/cityscape.jpg);
     font-family: 'Press Start 2P', cursive;
 }
 
 body {
-    margin: 0;
+    margin: auto;
+    height:100%;
     padding: 0;
-    background-color: midnightblue;
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -20,11 +20,14 @@ body {
     display:flex;
     flex-direction: column;
     justify-content: space-around;
+    background-color: midnightblue;
     align-content:center;
     height: 640px;
     width: 320px;
     margin: 0px;
     padding: 0px;
+    border: 16px black solid;
+    box-shadow: 24px 24px rgba(57,0,82,0.4);
 } 
 
 #splash, #game, #win, #game-over {
@@ -51,7 +54,6 @@ h2 {
     text-shadow: 10px 5px black; 
     font-size: 2em;
     font-weight: lighter;
-    margin-bottom:;
 }
 
 p {

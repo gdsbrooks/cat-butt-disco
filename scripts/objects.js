@@ -68,7 +68,7 @@ checkCollision(){
 
 }
 }
-const obstacles = []
+let obstacles = []
 
 function makeObstacles(){
     let obstacle1 = new Obstacle

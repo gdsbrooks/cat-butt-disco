@@ -14,7 +14,7 @@ let ctx = canvas.getContext('2d');
 let intervalId = 0;
 
 let bg = new Image();
-bg.src = './images/bg- wireframe.png';
+bg.src = './../images/bg-wireframe.png';
 
 // cat - a new Cat object called cat is created in cat.js
 // obstacles - an array of new Objects (obstacles or records) is created in objects.js
@@ -52,8 +52,17 @@ function start() {
     makeObstacles()
     animate()
 }
+
+function restart(){
+    cat = new Cat();
+    obstacles = []
+    intervalId = 0;
+    recordCounter = 0
+    start()
+}
+
 function endAnimation() {
-    if (cat.score >= 1) {
+    if (cat.score >= 6) {
         win()
     }
     else if (cat.lives <= 0) {
@@ -88,11 +97,13 @@ window.addEventListener('load', () => {
         start()
     })
     btnRestart1.addEventListener('click', () => {
-        start()
+        
+        restart();
+
     })
 
     btnRestart2.addEventListener('click', () => {
-        start()
+       restart()
     })
 
     document.addEventListener('keydown', (event) =>{
