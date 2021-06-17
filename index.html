@@ -11,7 +11,7 @@
   <body>
     <!-- Splash Screen: -->
     <div id="outer">
-      <div id="splash">
+      <div id="splash" style="display: flex;">
         <h1>CAT BUTT</h1>
         <img id="kitty" src="./images/splash-kitty.png" alt="8-bit cat" />
         <h1>DISCO</h1>
@@ -33,13 +33,13 @@
       </div>
 
       <!-- Game Screen: -->
-      <div id="game">
+      <div id="game" style="display: none;">
         <canvas width="320" height="640" id="myCanvas"></canvas>
       </div>
 
       <!-- Win Screen: -->
 
-      <div id="win">
+      <div id="win" style="display: none;">
         <h1>MEOW!</h1>
         <h1>YOU DID IT!</h1>
         <p>You successfully collected all the records!</p>
@@ -51,7 +51,7 @@
 
       <!-- Game Over Screen: -->
 
-      <div id="game-over">
+      <div id="game-over" style="display: none;">
         <h1>MEOW :( YOU LOST </h1>
         <p>You used up three lives and did not make it to the club.</p>
         <p>Time to go home, curl up on the sofa and lick those wounds.</p>

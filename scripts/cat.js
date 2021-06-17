@@ -18,8 +18,8 @@ class Cat {
         if (!this.timeout) {
         this.lives--
         this.timeout = true;
-        setTimeout(this.collisionTimeout, 3000)
         this.lives > 0 ? loselifeAudio.play() : null;
+        setTimeout(this.collisionTimeout, 3000)
         }
     };
 
@@ -27,8 +27,8 @@ class Cat {
         if (!this.timeout) {
             this.score++
             this.timeout = true;
-            setTimeout(this.collisionTimeout, 2000)
             this.score < 6 ? scoreUpAudio.play() : null;
+            setTimeout(this.collisionTimeout, 2000)
             }    
     };
 

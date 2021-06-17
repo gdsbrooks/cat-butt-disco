@@ -34,7 +34,6 @@ function gameOver() {
     splashScreen.style.display = 'none'
     gameScreen.style.display = 'none'
     winningScreen.style.display ='none'
-    
     //AUDIO
     gameplayAudio.pause()
     gameOverAudio.play()
@@ -49,23 +48,22 @@ function win() {
     gameScreen.style.display = 'none'
     splashScreen.style.display = 'none'
     gameOverScreen.style.display='none'
-
     //AUDIO
     gameplayAudio.pause()
     winAudio.play()
 }
 function start() {
+    //Show Game Screen
     gameScreen.style.display = 'flex'
     splashScreen.style.display = 'none'
-    gameOverScreen.style.display='none'
-    winningScreen.style.display ='none'
-
+    gameOverScreen.style.display= 'none'
+    winningScreen.style.display = 'none'
     //AUDIO 
     splashAudio.pause()
     winAudio.pause()
     gameOverAudio.pause()
     gameplayAudio.play()
-    
+    console.log(obstacles)
     makeObstacles()
     animate()
 }
@@ -78,14 +76,8 @@ function restart(){
     start()
 }
 
-function endAnimation() {
-    if (cat.score >= 6) {
-        win()
-    }
-    else if (cat.lives <= 0) {
-        gameOver()
-    }
-}
+    
+
 // The animation loop:
 function animate() {
     drawGameScreen()
@@ -94,13 +86,14 @@ function animate() {
         obstacles[i].draw()
         obstacles[i].move()
         obstacles[i].checkCollision();
+        cat.lives <= 0 ? gameOver() : cat.score >= 6 ? win() : null;
     }
-    endAnimation()
     intervalId = requestAnimationFrame(animate)
     }
     
 window.addEventListener('load', () => {
     //show initial splash screen:
+    
     splashScreen.style.display = 'flex'
     gameScreen.style.display = 'none'
     gameOverScreen.style.display='none'
