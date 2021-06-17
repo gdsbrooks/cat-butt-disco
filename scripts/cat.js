@@ -1,5 +1,5 @@
 let catSpriteSheet = new Image()
-catSpriteSheet.src = '../images/cat-sprite-sheet.png'
+catSpriteSheet.src = './images/cat-sprite-sheet.png'
 
 class Cat {
     constructor(){
