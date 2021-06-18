@@ -16,18 +16,29 @@ let intervalId = 0;
 let bg = new Image();
 bg.src = './images/bg-night.png';
 
+let city = new Image();
+city.src = './images/city-night.png';
+
 // cat - a new Cat object called cat is created in cat.js
 // obstacles - an array of new Objects (obstacles or records) is created in objects.js
 
 function drawGameScreen() {
-    //Draw game background and lives / score counters
+    //Draw game background
     ctx.drawImage( bg, 0, 0, 320, 640)
+}
+
+function drawText() {
+    //Draw score and lives counter (should be called after city)
     ctx.fillStyle = '#32CD32'
     ctx.font = '16px "Press Start 2P"'
     ctx.fillText(`SCORE: ${cat.score}`, 182, 20)
     ctx.fillText(`LIVES: ${cat.lives}`, 8, 20)
 }
 
+function drawCity() {
+    //Draw city on horizon
+    ctx.drawImage( city, 0, 63, 320, 144,0,0,320,144)
+}
 function gameOver() {
     cancelAnimationFrame(intervalId);
     
@@ -97,9 +108,12 @@ function animate() {
         obstacles[i].draw()
         obstacles[i].move()
         obstacles[i].checkCollision();
-        cat.lives <= 0 ? gameOver() : cat.score >= 6 ? win() : null;
     }
-    intervalId = requestAnimationFrame(animate)
+    drawCity()
+    drawText()
+    
+    cat.lives <= 0 ? gameOver() : cat.score >= 2 ? win() : intervalId = requestAnimationFrame(animate);
+
     }
     
 window.addEventListener('load', () => {

@@ -2,7 +2,7 @@
 let recordSprite = new Image();
 recordSprite.src = "./images/vinyl.png";
 let barrierSprite = new Image();
-barrierSprite.src = "./images/obstacle.png";
+barrierSprite.src = "./images/barrier-night.png";
 
 //global variables
 let recordCounter = 0;
@@ -25,7 +25,7 @@ class Obstacle {
   }
   move() {
     this.y++;
-    this.y > canvas.height ? this.randomize() : null;
+    this.y > canvas.height - 24 ? this.randomize() : null; //barriers disappear when half off the screen.
     if (this.y > 144 && this.y < 504) {
       this.x += this.xShift;
       this.h += 40 / 360;
@@ -58,7 +58,7 @@ class Obstacle {
       this.x < cat.x + cat.w &&
       this.x + this.w > cat.x &&
       this.y + this.h > cat.y &&
-      this.y < cat.y + cat.h
+      this.y + 6 < cat.y + cat.h // 6 pixel grace for the flattened shape of the barrier
     ) {
       this.isRecord ? cat.gainPoint() : cat.loseLife();
       this.h = 0;
