@@ -67,7 +67,7 @@ class Obstacle {
     }
   }
 }
-let obstacles = [];
+let obstacles = new Array
 
 function makeObstacles() {
   let obstacle1 = new Obstacle();

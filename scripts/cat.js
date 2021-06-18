@@ -27,7 +27,7 @@ class Cat {
         if (!this.timeout) {
             this.score++
             this.timeout = true;
-            this.score < 6 ? scoreUpAudio.play() : null;
+            this.score < 3 ? scoreUpAudio.play() : null;
             setTimeout(this.collisionTimeout, 2000)
             }    
     };
