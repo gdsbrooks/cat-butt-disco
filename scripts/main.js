@@ -15,11 +15,13 @@ let canvas = document.getElementById('myCanvas')
 let ctx = canvas.getContext('2d');
 let intervalId = 0;
 
+//initiate background elements
 let bg = new Image();
 bg.src = './images/bg-night.png';
-
 let city = new Image();
 city.src = './images/city-night.png';
+let citySourceY = 0 ///city scroll variable
+
 
 // cat - a new Cat object called cat is created in cat.js
 // obstacles - an array of new Objects (obstacles or records) is created in objects.js
@@ -38,8 +40,11 @@ function drawText() {
 }
 
 function drawCity() {
-    //Draw city on horizon
-    ctx.drawImage( city, 0, 63, 320, 144,0,0,320,144)
+    //Draw city on horizon slowly scrolling up
+    if ((citySourceY + 144) < 240) {
+        citySourceY = citySourceY + 1 / 60
+    }
+    ctx.drawImage( city, 0, citySourceY, 320, 144,0,0,320,144)
 }
 function gameOver() {
     cancelAnimationFrame(intervalId);
