@@ -51,7 +51,7 @@ class Obstacle {
 
     recordCounter++;
 
-    recordCounter % 12git === 0 ? (this.isRecord = true) : null;
+    recordCounter % 12 === 0 ? (this.isRecord = true) : null;
   }
   checkCollision() {
     if (
