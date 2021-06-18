@@ -1,6 +1,6 @@
 # Cat Butt Disco
 
-[Link Deploy](http://github.com)
+[Link Deploy](https://gdsbrooks.github.io/cat-butt-disco/)
 
 
 ## Description
@@ -120,7 +120,8 @@ Backlog
 ## Additional Links
 
 ### Listen to the inspiration
-Courtesy of the talented [Mr Linden on Soundcloud.com](https://soundcloud.com/mrlinden/cat-butt).
+
+Music and Artwork Courtesy of the talented [Mr Linden on Soundcloud.com](https://soundcloud.com/mrlinden/cat-butt).
 You can even [Buy the T-Shirt!](https://mrlinden.threadless.com/designs/cattbutt/mens/t-shirt/regular?color=fuchsia)
 
 ### Trello Board

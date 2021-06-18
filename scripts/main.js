@@ -4,6 +4,8 @@ let splashScreen = document.getElementById('splash')
 let gameScreen = document.getElementById('game')
 let gameOverScreen = document.getElementById('game-over')
 let winningScreen = document.getElementById('win')
+let blurBox = document.getElementById('blur')
+let btnBlur = document.getElementById('blur-button')
 let btnStart = document.getElementById('btnStart')
 let btnRestart1 = document.getElementById('btnRestart1')
 let btnRestart2 = document.getElementById('btnRestart2')
@@ -125,8 +127,10 @@ window.addEventListener('load', () => {
     winningScreen.style.display ='none'
     //AUDIO 
 
-    splashAudio.play()
-    
+    btnBlur.addEventListener("click", () => {
+        blurBox.remove()
+        splashAudio.play();
+    })    
 
     // event handlers
     btnStart.addEventListener('click', () => {

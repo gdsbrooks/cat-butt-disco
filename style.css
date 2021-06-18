@@ -30,6 +30,19 @@ body {
     border: 16px black solid;
     box-shadow: 24px 24px rgba(57,0,82,0.4);
 } 
+#blur {
+    position: fixed;
+    bottom: 15%;
+    height: 100px;
+    width: fit-content;
+    max-width: 320px;
+    background-color: #333333;
+    border: #32CD32 4px solid;
+    color: #32CD32;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
 
 #splash, #game, #win, #game-over {
     display: flex;
