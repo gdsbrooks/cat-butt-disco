@@ -50,9 +50,7 @@ function gameOver() {
     gameScreen.style.display = 'none'
     winningScreen.style.display ='none'
     //AUDIO
-    gameplayAudio.pause()
-    winAudio.pause()
-    splashAudio.pause()
+    resetAudio()
     gameOverAudio.play()
     
 }
@@ -66,9 +64,7 @@ function win() {
     splashScreen.style.display = 'none'
     gameOverScreen.style.display='none'
     //AUDIO
-    gameplayAudio.pause()
-    gameOverAudio.pause()
-    splashAudio.pause()
+    resetAudio()
     winAudio.play()
 }
 function start() {
@@ -78,9 +74,7 @@ function start() {
     gameOverScreen.style.display= 'none'
     winningScreen.style.display = 'none'
     //AUDIO 
-    splashAudio.pause()
-    winAudio.pause()
-    gameOverAudio.pause()
+    resetAudio()
     gameplayAudio.play()
     
     //Make obstacles and their array, and start animation loop

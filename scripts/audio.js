@@ -18,3 +18,15 @@ winAudio.loop = false;
 gameOverAudio.loop = false;
 scoreUpAudio.loop = false;
 loselifeAudio.loop = false;
+
+function resetAudio() {
+    splashAudio.pause()
+    gameplayAudio.pause()
+    winAudio.pause()
+    gameOverAudio.pause()
+
+    splashAudio.currentTime = 0
+    gameplayAudio.currentTime = 0
+    winAudio.currentTime = 0
+    gameOverAudio.currentTime = 0
+}
