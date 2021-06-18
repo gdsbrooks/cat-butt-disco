@@ -95,7 +95,9 @@ function restart(){
     //Reset frame counter
     intervalId = 0;
     //Reset record counter that sets record appearance frequency
-    recordCounter = 0
+    recordCounter = 0;
+    //Reset City horizon scroll
+    citySourceY = 0;
     start()
 }
 
