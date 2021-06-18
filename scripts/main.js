@@ -112,7 +112,7 @@ function animate() {
     drawCity()
     drawText()
     
-    cat.lives <= 0 ? gameOver() : cat.score >= 2 ? win() : intervalId = requestAnimationFrame(animate);
+    cat.lives <= 0 ? gameOver() : cat.score >= 3 ? win() : intervalId = requestAnimationFrame(animate);
 
     }
     

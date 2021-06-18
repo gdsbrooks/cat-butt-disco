@@ -1,0 +1,25 @@
+btnBlur.addEventListener("click", () => {
+      blurBox.remove()
+      splashAudio.play();
+  })
+
+
+
+  #blur {
+    position: fixed;
+    top: 55%;
+    height: 100px;
+    width: fit-content;
+    max-width: 320px;
+    background-color: #333333;
+    border: #32CD32 4px solid;
+    color: #32CD32;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+<div id="blur">
+        <h4>This Game is better with the VOLUME UP!</h4>
+        <a class="btn" id="blur-button">OK</a>
+      </div>
