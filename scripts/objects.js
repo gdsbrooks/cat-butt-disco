@@ -25,7 +25,7 @@ class Obstacle {
   }
   move() {
     this.y++;
-    this.y > canvas.height - 24 ? this.randomize() : null; //barriers disappear when half off the screen.
+    this.y > canvas.height - 32 ? this.randomize() : null; //barriers disappear when half off the screen.
     if (this.y > 144 && this.y < 504) {
       this.x += this.xShift;
       this.h += 40 / 360;
