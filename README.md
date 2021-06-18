@@ -34,6 +34,7 @@ Your kitty is willing to use up to 3 of their lives for this game. If you hit an
 - MUSIC!
 - - As cat collects more records, background music increases in layered complexity (clicktrack, bass, guitar, vocals, synth effects) until a full song is playing.
 
+- Blur screen or have no start button or 'volume up' little message to get interaction to start music (autoplay not allowed)
 - Add L and R touchbuttons or touch responsiveness to move cat for playing on smartphone
 
 
