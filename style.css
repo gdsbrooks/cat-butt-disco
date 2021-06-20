@@ -32,7 +32,7 @@ body {
 } 
 #blur {
     position: fixed;
-    bottom: 15%;
+    bottom: 150px;
     height: 100px;
     width: fit-content;
     max-width: 320px;
@@ -54,7 +54,7 @@ body {
 
 h1 {
     font-family: 'Press Start 2P', cursive;
-    font-size: 40px;
+    font-size: 32px;
     text-align: center;
     color: limegreen;
     text-shadow: 10px 5px black; 
@@ -125,6 +125,7 @@ p {
 
 footer {
     margin: 5px;
+    font-size: 0.9em;
     color: white;
     font-family: 'Lobster';
     text-align: center;    
@@ -132,7 +133,6 @@ footer {
 }
 
 footer a{
-    font-size: 1.2em;
     text-decoration: none;
     color: limegreen;
     text-align: center;

@@ -83,8 +83,6 @@ function makeObstacles() {
   let obstacle11 = new Obstacle();
   let obstacle12 = new Obstacle();
 
-  
-
   obstacles.push(
     obstacle1,
     obstacle2,
